@@ -17,12 +17,10 @@ final class BedrockStreaming extends Config
 
     public function getRules(): array
     {
-        $rules = [
+        return [
             '@PSR12' => true,
             '@Symfony' => true,
-            'array_syntax' => [
-                'syntax' => 'short',
-            ],
+            'array_syntax' => true,
             'declare_strict_types' => true,
             'global_namespace_import' => [
                 'import_classes' => false,
@@ -42,9 +40,19 @@ final class BedrockStreaming extends Config
             'phpdoc_summary' => false,
             'single_line_throw' => false,
             'yoda_style' => false,
-            'trailing_comma_in_multiline' => ['elements' => ['arguments', 'arrays', 'match', 'parameters']],
+            'trailing_comma_in_multiline' => ['elements' => ['arguments', 'arrays', 'match', 'parameters', 'array_destructuring']],
+            'simple_to_complex_string_variable' => true,
+            'no_unset_cast' => true,
+            'clean_namespace' => true,
+            'short_scalar_cast' => true,
+            'normalize_index_brace' => true,
+            'assign_null_coalescing_to_coalesce_equal' => true,
+            'no_whitespace_before_comma_in_array' => ['after_heredoc' => true],
+            'method_argument_space' => ['after_heredoc' => true, 'on_multiline' => 'ensure_fully_multiline', 'attribute_placement' => 'ignore'],
+            'heredoc_indentation' => true,
+            'visibility_required' => true,
+            'list_syntax' => true,
+            'ternary_to_null_coalescing' => true,
         ];
-
-        return $rules;
     }
 }
